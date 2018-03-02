@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Log in</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<div>
+    <h1>Log in</h1>
+    <div>
+        Username : 
+        <input type="text" [(ngModel)]="user">
+    </div>
+    <br>
+    <div>
+        Password : 
+        <input type="password" [(ngModel)]="pass">
+    </div>
+    <br>
+    <button *ngIf="!isLogin" (click)="login()">Log in</button>
+    <button *ngIf="isLogin" (click)="logout()">Log out</button>
+    <br>
+    <br>
+    <div *ngIf="!isLogin">
+      <textarea>
+        Still not login
+      </textarea>
+    </div>
+    <div *ngIf="isLogin">
+      <textarea>
+        Still login
+      </textarea>
+    </div>
+</div>
+</ion-content>
