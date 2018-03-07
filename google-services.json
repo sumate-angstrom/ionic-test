@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "46363674915",
-    "firebase_url": "https://pushwooshdemo-194704.firebaseio.com",
-    "project_id": "pushwooshdemo-194704",
-    "storage_bucket": "pushwooshdemo-194704.appspot.com"
+    "project_number": "437832062456",
+    "firebase_url": "https://push-test-b230c.firebaseio.com",
+    "project_id": "push-test-b230c",
+    "storage_bucket": "push-test-b230c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:46363674915:android:61cd804445f37c42",
+        "mobilesdk_app_id": "1:437832062456:android:48ed9505270762e6",
         "android_client_info": {
-          "package_name": "com.phonegap.pushwooshdemo"
+          "package_name": "com.sumate.push.test"
         }
       },
       "oauth_client": [
         {
-          "client_id": "46363674915-228740gut2tpidm117hatqrjdaqtede8.apps.googleusercontent.com",
+          "client_id": "437832062456-3mjjbj2saqv9o04h6o9mcacu65bkoph1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyApDzAQaZdpF6rTp4l7IBemgdqTVu6k8To"
+          "current_key": "AIzaSyC6Xe9Qcs_UGZzC4fO8ZkoF8MQ28VRF_8U"
         }
       ],
       "services": {

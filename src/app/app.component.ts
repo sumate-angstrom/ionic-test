@@ -5,8 +5,9 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
 import { Authenticate } from '../pages/authenticate/authenticate';
+import { SignUp } from '../pages/signup/signup';
 
-import { NotificationService } from "../core"
+import { NotificationService, CognitoService } from "../core"
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -34,10 +35,10 @@ export class MyApp {
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
       { title: 'My First List', component: ListPage },
-      { title: 'Authen', component: Authenticate }
+      { title: 'Authen', component: Authenticate },
+      { title: 'Sign up', component: SignUp }
     ];
 
-    NotificationService.initialize();
   }
 
   initializeApp() {
@@ -47,6 +48,8 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+    CognitoService.init();
+    // NotificationService.initialize();
   }
 
   openPage(page) {

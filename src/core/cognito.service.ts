@@ -24,7 +24,7 @@ export class CognitoService {
   private static awsRegion = 'ap-southeast-1';
   private static idenPoolId = 'ap-southeast-1:c52f5485-fbba-419e-bfcc-db4025c46547';
   private static logins = { 'cognito-idp.ap-southeast-1.amazonaws.com/ap-southeast-1_XcOnPEUZZ': '' };
-  private static credentialProvider = 'cognito-idp.ap-south-1.amazonaws.com/ap-southeast-1_XcOnPEUZZ';
+  private static credentialProvider = 'cognito-idp.ap-southeast-1.amazonaws.com/ap-southeast-1_XcOnPEUZZ';
   private static userPoolId = 'ap-southeast-1_XcOnPEUZZ';
   private static clientId = '3pdl54f0jberqeqb97o74v0gdn'
   private static userPoolData = {
@@ -98,10 +98,8 @@ export class CognitoService {
             Logins: this.logins
           })
 
-          NotificationService.registerToken().then(
-              (success) => console.log("register success"),
-              (error) => console.log("register fail")
-          );
+          console.log(this.logins)
+          console.log(credentials)
 
           // Get AWS credentials
           credentials.clearCachedId()
@@ -111,6 +109,13 @@ export class CognitoService {
               reject(refreshError)
             } else {
               AWS.config.credentials = credentials
+
+              NotificationService.registerToken();
+              // .then(
+              //     (success) => alert("register success"),
+              //     (error) => alert("register fail")
+              // );
+
               // Retrieve user attributes
               cognitoUser.getUserAttributes((getAttrError, attributes) => {
                 if (getAttrError) {
@@ -241,5 +246,17 @@ export class CognitoService {
   //-----------------------------------------------------
   private static getCurrentUser() {
     return new CognitoUserPool(this.userPoolData).getCurrentUser()
+  }
+
+  //
+  //
+  //
+  public static signUp(username: string, password: string): Promise<any>{
+    return new Promise((resolve, reject) => {
+      let userPool = new CognitoUserPool(this.userPoolData);
+      userPool.signUp(username, password, [], [], (err, result) => {
+        if(err) console.log(err);
+      })
+    });
   }
 }

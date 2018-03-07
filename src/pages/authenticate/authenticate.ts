@@ -24,6 +24,7 @@ export class Authenticate {
   }
 
   logout() : void{
+    CognitoService.signOut();
     this.isLogin = false;
   }
 }

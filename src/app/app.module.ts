@@ -7,9 +7,12 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { Authenticate } from '../pages/authenticate/authenticate';
+import { SignUp } from '../pages/signup/signup';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { Push } from '@ionic-native/push';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    Authenticate
+    Authenticate,
+    SignUp
   ],
   imports: [
     BrowserModule,
@@ -29,11 +33,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    Authenticate
+    Authenticate,
+    SignUp
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

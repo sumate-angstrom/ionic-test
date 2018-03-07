@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sign up</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<div>
+    <h1>Sign up</h1>
+    <div>
+        Username : 
+        <input type="text" [(ngModel)]="user">
+    </div>
+    <br>
+    <div>
+        Password : 
+        <input type="password" [(ngModel)]="pass">
+    </div>
+    <br>
+    <button (click)="signup()">Sign up</button>
+    <br>
+</div>
+</ion-content>
